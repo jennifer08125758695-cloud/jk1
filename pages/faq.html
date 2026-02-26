@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Frequently Asked Questions | VOGUE USA</title>
+  <meta name="description" content="Find answers to the most common questions about shopping, shipping, returns, and your account at VOGUE USA.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <style>
+    .faq-page { padding: 60px 0 100px; }
+    .faq-grid { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+    .faq-category { margin-bottom: 48px; }
+    .faq-category-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .faq-item {
+      border: 1px solid var(--gray-mid);
+      border-radius: var(--radius);
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      background: var(--white);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .faq-question:hover { background: var(--cream); }
+    .faq-question.open { background: var(--black); color: var(--white); }
+    .faq-icon {
+      font-size: 20px;
+      font-weight: 300;
+      flex-shrink: 0;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      display: none;
+      padding: 18px 20px;
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-light);
+      background: var(--cream);
+      border-top: 1px solid var(--gray-mid);
+    }
+    .faq-answer.open { display: block; }
+    .faq-answer a { color: var(--accent); text-decoration: underline; }
+    .faq-search-bar {
+      max-width: 560px;
+      margin: 0 auto 50px;
+      position: relative;
+    }
+    .faq-search-bar input {
+      width: 100%;
+      padding: 14px 50px 14px 20px;
+      border: 2px solid var(--gray-mid);
+      border-radius: 40px;
+      font-size: 15px;
+      outline: none;
+      transition: var(--transition);
+      font-family: var(--font-body);
+    }
+    .faq-search-bar input:focus { border-color: var(--black); }
+    .faq-search-bar svg { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--gray); }
+    .still-need-help {
+      text-align: center;
+      padding: 50px 30px;
+      background: var(--black);
+      border-radius: var(--radius-lg);
+      margin-top: 60px;
+      color: var(--white);
+    }
+    .still-need-help h3 { font-family: var(--font-display); font-size: 1.6rem; margin-bottom: 10px; }
+    .still-need-help p { color: rgba(255,255,255,0.65); margin-bottom: 24px; }
+    .btn-contact-help {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 32px;
+      background: var(--accent);
+      color: var(--white);
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .btn-contact-help:hover { background: #a00c23; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
+
+<div class="announcement-bar">Free Shipping on Orders Over <span>$75</span> &nbsp;|&nbsp; Use Code <span>SAVE10</span> for 10% Off &nbsp;|&nbsp; 30-Day Easy Returns</div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="logo"><a href="../index.html"><div class="logo-mark"><span>V</span></div><div class="logo-text"><span class="logo-name">VOGUE USA</span><span class="logo-tagline">American Fashion House</span></div></a></div>
+    <div class="header-search"><input type="search" placeholder="Search products..."><button class="search-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button></div>
+    <div class="header-actions"><a href="login.html" class="btn-login">Login</a><a href="signup.html" class="btn-signup">Sign Up</a><button class="cart-btn" onclick="openCart()"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-count">0</span></button></div>
+  </div>
+  <nav class="main-nav"><div class="nav-inner">
+    <div class="nav-item"><a href="category.html?cat=women" class="nav-link">Women's</a></div>
+    <div class="nav-item"><a href="category.html?cat=men" class="nav-link">Men's</a></div>
+    <div class="nav-item"><a href="category.html?cat=kids" class="nav-link">Kids</a></div>
+    <div class="nav-item"><a href="../index.html#productsSection" class="nav-link">Sale</a></div>
+    <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+  </div></nav>
+</header>
+
+<div class="breadcrumb"><div class="breadcrumb-inner"><a href="../index.html">Home</a><span class="sep">›</span><span class="current">FAQ</span></div></div>
+
+<div class="legal-header"><div class="legal-header-inner">
+  <h1>Frequently Asked Questions</h1>
+  <p>Find quick answers to the most common questions about orders, shipping, returns, and your account.</p>
+</div></div>
+
+<main class="faq-page">
+  <div class="faq-grid">
+
+    <div class="faq-search-bar">
+      <input type="text" placeholder="Search FAQs..." id="faqSearch" oninput="searchFAQ(this.value)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </div>
+
+    <!-- Orders -->
+    <div class="faq-category" id="faqOrders">
+      <div class="faq-category-title">Orders &amp; Payment</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I place an order? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Browse our collections, select your size and color, then click "Add to Cart." When you're ready, click the cart icon at the top right and proceed to checkout. You'll enter your shipping address and payment information to complete your order.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          What payment methods do you accept? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We accept all major credit and debit cards (Visa, Mastercard, American Express, Discover), PayPal, and Apple Pay. All transactions are processed through a PCI-DSS compliant payment gateway with 256-bit SSL encryption.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Can I modify or cancel my order after placing it? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          You have a 1-hour window to modify or cancel your order after placement. After that, your order enters processing and changes may not be possible. Please contact us immediately at <a href="mailto:orders@vogueusamodels.com">orders@vogueusamodels.com</a> or call 1-800-864-8472 if you need to make changes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Will I receive an order confirmation? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! You'll receive an email confirmation within a few minutes of placing your order. This email will include your order number, item details, and estimated delivery date. Please check your spam folder if you don't see it.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Is it safe to use my credit card on your website? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Absolutely. Our website uses HTTPS with 256-bit SSL encryption for all data transmission. We never store your full credit card number on our servers. All payment processing is handled by PCI-DSS Level 1 certified payment processors.
+        </div>
+      </div>
+    </div>
+
+    <!-- Shipping -->
+    <div class="faq-category" id="faqShipping">
+      <div class="faq-category-title">Shipping &amp; Delivery</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How much does shipping cost? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Standard shipping (5–7 business days) is <strong>FREE</strong> on all orders over $75. For orders under $75, standard shipping is $9.99. Express shipping (2–3 business days) is $14.99. Overnight shipping is $29.99. All rates are for domestic USA delivery.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How long will my order take to arrive? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Standard shipping takes 5–7 business days. Express takes 2–3 business days. Overnight shipping delivers by the next business day if ordered before 2PM EST. Processing time (1–2 business days) is separate from shipping time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I track my order? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Once your order ships, you'll receive a shipping confirmation email with your tracking number. You can use this number at <a href="track-order.html">our tracking page</a>, USPS.com, or UPS.com. Allow up to 24 hours for tracking information to appear.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Do you ship internationally? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes, we ship to Canada, the United Kingdom, Australia, and select European countries. International shipping rates vary by destination and are calculated at checkout. Customers are responsible for any import duties or customs fees charged by their country.
+        </div>
+      </div>
+    </div>
+
+    <!-- Returns -->
+    <div class="faq-category" id="faqReturns">
+      <div class="faq-category-title">Returns &amp; Exchanges</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          What is your return policy? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We offer a 30-day return policy on most items. Items must be unworn, unwashed, and in original condition with all tags attached. Undergarments and items marked "Final Sale" are not eligible for return. See our full <a href="refund-policy.html">Return Policy</a> for details.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I start a return or exchange? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Email <a href="mailto:returns@vogueusamodels.com">returns@vogueusamodels.com</a> with your order number and reason for return. We'll send you a prepaid USPS return label within 24 business hours. Pack the item securely and drop it at any USPS location.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          When will I receive my refund? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Refunds are processed within 5–10 business days after we receive and inspect your return. The refund is issued to your original payment method. Credit card refunds may take an additional 3–5 business days to appear on your statement.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          What if I received a damaged or wrong item? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We sincerely apologize for the error. Please contact us within 48 hours of delivery with your order number and photos of the issue. We will send you a prepaid return label and ship the correct or replacement item at no charge, or issue a full refund.
+        </div>
+      </div>
+    </div>
+
+    <!-- Sizing -->
+    <div class="faq-category" id="faqSizing">
+      <div class="faq-category-title">Sizing &amp; Fit</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          How do I find the right size? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          We recommend checking our <a href="size-guide.html">Size Guide</a> before purchasing. Each product page also includes specific sizing notes. When between sizes, we generally recommend sizing up for the most comfortable fit. Our sizes follow standard US sizing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Do you offer plus sizes? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Yes! We carry sizes XS through 3X in most women's styles and S through 2XL in men's styles. Plus-size options are clearly marked in the size selector on each product page. We are continuously expanding our size range to be more inclusive.
+        </div>
+      </div>
+    </div>
+
+    <!-- Account -->
+    <div class="faq-category" id="faqAccount">
+      <div class="faq-category-title">Account &amp; Password</div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Do I need an account to shop? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          No, you can check out as a guest. However, creating a free account gives you benefits like saved addresses, order history, faster checkout, exclusive member-only discounts, and early access to sales.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          I forgot my password. How do I reset it? <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Click "Login" at the top of the page, then click "Forgot password?" Enter your email address and we'll send you a reset link within a few minutes. If you don't receive it, check your spam folder or contact us at <a href="mailto:support@vogueusamodels.com">support@vogueusamodels.com</a>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Still Need Help -->
+    <div class="still-need-help">
+      <h3>Still Have a Question?</h3>
+      <p>Our customer care team is available Monday–Friday 9AM–6PM EST and Saturday 10AM–4PM EST.</p>
+      <a href="contact.html" class="btn-contact-help">Contact Our Team</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer" style="padding-top:50px">
+  <div style="max-width:1320px;margin:0 auto;padding:0 20px 30px;border-bottom:1px solid rgba(255,255,255,0.1)">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px">
+      <div style="font-size:13px;color:rgba(255,255,255,0.5)">500 Fifth Avenue, New York, NY 10110 &nbsp;|&nbsp; hello@vogueusamodels.com &nbsp;|&nbsp; 1-800-864-8472</div>
+    </div>
+  </div>
+  <div style="max-width:1320px;margin:0 auto;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:12px;color:rgba(255,255,255,0.3)">
+    <span>© 2025 VOGUE USA LLC. All Rights Reserved.</span>
+    <div style="display:flex;gap:14px">
+      <a href="privacy-policy.html" style="color:rgba(255,255,255,0.4)">Privacy</a>
+      <a href="terms.html" style="color:rgba(255,255,255,0.4)">Terms</a>
+      <a href="refund-policy.html" style="color:rgba(255,255,255,0.4)">Refunds</a>
+      <a href="contact.html" style="color:rgba(255,255,255,0.4)">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><div><div class="cart-title">Cart</div><div class="cart-count-text" id="cartCountText">0 items</div></div><button class="cart-close" onclick="closeCart()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none"><div class="cart-summary-row total"><span>Total</span><span id="cartTotal">$0.00</span></div><a href="checkout.html" class="btn-checkout">Checkout</a></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="../js/main.js"></script>
+<script>
+  document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
+  function toggleFAQ(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-question.open').forEach(b => {
+      b.classList.remove('open');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+  function searchFAQ(query) {
+    const q = query.toLowerCase();
+    document.querySelectorAll('.faq-item').forEach(item => {
+      const text = item.textContent.toLowerCase();
+      item.style.display = q === '' || text.includes(q) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

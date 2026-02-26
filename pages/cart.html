@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | VOGUE USA</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  🇺🇸 Free Shipping on Orders Over <span>$75</span> &nbsp;|&nbsp; Use Code <span>SAVE10</span> for 10% Off
+</div>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-top">
+    <div class="logo">
+      <a href="../index.html">
+        <div class="logo-mark"><span>V</span></div>
+        <div class="logo-text">
+          <span class="logo-name">VOGUE USA</span>
+          <span class="logo-tagline">American Fashion House</span>
+        </div>
+      </a>
+    </div>
+    <div class="header-search">
+      <input type="search" placeholder="Search products…">
+      <button class="search-btn">🔍</button>
+    </div>
+    <div class="header-actions">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="signup.html" class="btn-signup">Sign Up</a>
+      <button class="cart-btn" onclick="openCart()">🛒<span class="cart-count">0</span></button>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <div class="nav-item"><a href="category.html?cat=women" class="nav-link">Women's</a></div>
+      <div class="nav-item"><a href="category.html?cat=men" class="nav-link">Men's</a></div>
+      <div class="nav-item"><a href="category.html?cat=kids" class="nav-link">Kids</a></div>
+      <div class="nav-item"><a href="../index.html#productsSection" class="nav-link">Sale 🔥</a></div>
+    </div>
+  </nav>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <span class="current">Shopping Cart</span>
+  </div>
+</div>
+
+<!-- Cart Page -->
+<main class="cart-page">
+  <div class="container">
+    <h1 class="cart-page-title">Shopping Cart</h1>
+    <div class="cart-page-count" id="cartPageCount">0 items</div>
+
+    <!-- Empty State -->
+    <div id="cartEmptyState" style="text-align:center;padding:80px 20px;display:none">
+      <div style="font-size:80px;margin-bottom:20px">🛍️</div>
+      <h2 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:12px">Your cart is empty</h2>
+      <p style="color:var(--text-light);margin-bottom:30px">Looks like you haven't added any items yet.</p>
+      <a href="../index.html" class="btn-checkout-full" style="width:auto;display:inline-flex;padding:14px 36px">Continue Shopping →</a>
+    </div>
+
+    <!-- Cart Content -->
+    <div class="cart-layout" id="cartContent" style="display:none">
+      <div>
+        <table class="cart-table">
+          <thead class="cart-table-head">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartTableBody">
+          </tbody>
+        </table>
+
+        <div style="display:flex;gap:12px;margin-top:24px">
+          <a href="../index.html" class="filter-btn">← Continue Shopping</a>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary-box">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span><span id="pageSubtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span><span id="pageShipping">—</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (8%)</span><span id="pageTax">$0.00</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span><span id="pageTotal">$0.00</span>
+        </div>
+
+        <div class="coupon-row">
+          <input type="text" id="couponInput" placeholder="Coupon code (try SAVE10)">
+          <button class="btn-apply-coupon" onclick="applyCoupon()">Apply</button>
+        </div>
+
+        <a href="checkout.html" class="btn-checkout-full">
+          🔒 Proceed to Checkout
+        </a>
+
+        <div class="secure-badges" style="margin-top:14px">
+          <span>🔒 Secure</span>
+          <span>🚚 Fast Ship</span>
+          <span>↩️ Easy Returns</span>
+        </div>
+
+        <div style="margin-top:16px;text-align:center;font-size:11px;color:var(--gray)">
+          Free shipping on orders over $75!
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer" style="padding-top:40px">
+  <div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:20px">
+    <p>© 2025 VOGUE USA. All Rights Reserved.</p>
+    <div>
+      <a href="privacy-policy.html" style="margin:0 8px">Privacy Policy</a>
+      <a href="terms.html" style="margin:0 8px">Terms</a>
+      <a href="contact.html" style="margin:0 8px">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div><div class="cart-title">Your Cart</div><div class="cart-count-text" id="cartCountText">0 items</div></div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-summary-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+    <div class="cart-summary-row"><span>Shipping</span><span id="cartShipping">$9.99</span></div>
+    <div class="cart-summary-row"><span>Tax (8%)</span><span id="cartTax">$0.00</span></div>
+    <div class="cart-summary-row total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <a href="checkout.html" class="btn-checkout">🔒 Checkout Securely</a>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script>
+<script src="../js/cart.js"></script>
+<script>
+  document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipping Policy | VOGUE USA</title>
+  <link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+<div class="announcement-bar">&#127482;&#127480; Free Shipping on Orders Over <span>$75</span></div>
+<header class="site-header"><div class="header-top">
+  <div class="logo"><a href="../index.html"><div class="logo-mark"><span>V</span></div><div class="logo-text"><span class="logo-name">VOGUE USA</span><span class="logo-tagline">American Fashion House</span></div></a></div>
+  <div class="header-actions"><a href="login.html" class="btn-login">Login</a><a href="signup.html" class="btn-signup">Sign Up</a><button class="cart-btn" onclick="openCart()">&#128722;<span class="cart-count">0</span></button></div>
+</div>
+<nav class="main-nav"><div class="nav-inner">
+  <div class="nav-item"><a href="category.html?cat=women" class="nav-link">Women's</a></div>
+  <div class="nav-item"><a href="category.html?cat=men" class="nav-link">Men's</a></div>
+  <div class="nav-item"><a href="category.html?cat=kids" class="nav-link">Kids</a></div>
+</div></nav></header>
+<div class="legal-header"><div class="legal-header-inner"><h1>Shipping Policy</h1><p>Everything you need to know about delivery options, costs, and timelines.</p></div></div>
+<main class="legal-page"><div class="legal-content">
+<div class="legal-last-updated">Last Updated: January 1, 2025</div>
+<h2>Shipping Options</h2>
+<p>We ship to all 50 US states, Washington D.C., Puerto Rico, Guam, and US Virgin Islands. International shipping is available to select countries.</p>
+<h2>Domestic Shipping Rates</h2>
+<ul>
+<li><strong>Standard (5-7 business days):</strong> FREE on orders over $75, otherwise $9.99</li>
+<li><strong>Express (2-3 business days):</strong> $14.99 flat rate</li>
+<li><strong>Overnight (Next business day):</strong> $29.99 — Order by 2PM EST Mon-Fri</li>
+</ul>
+<h2>Processing Times</h2>
+<p>Orders placed on business days (Mon-Fri) before 2PM EST typically ship same day. Orders placed after 2PM EST, on weekends, or on US federal holidays will ship the next business day. Processing time is separate from shipping time.</p>
+<h2>Order Tracking</h2>
+<p>Once your order ships you will receive a confirmation email with a USPS or UPS tracking number. Allow up to 24 hours for tracking to update on the carrier website.</p>
+<h2>International Shipping</h2>
+<p>International orders ship via USPS International Priority Mail or DHL Express. Delivery typically takes 7-21 business days depending on destination. Customers are responsible for all import duties, taxes, and customs fees.</p>
+<h2>Holiday Shipping</h2>
+<p>During peak holiday seasons (Thanksgiving through New Year) processing times may be extended by 1-2 business days. We recommend ordering early to ensure on-time delivery.</p>
+<h2>Address Changes</h2>
+<p>If you need to change your shipping address, please contact us within 1 hour of placing your order. Once an order has been processed we cannot guarantee address changes.</p>
+<h2>Questions?</h2>
+<p>Contact us at shipping@vogueusamodels.com or 1-800-VOGUE-USA.</p>
+</div></main>
+<footer class="site-footer" style="padding-top:40px"><div class="footer-bottom" style="max-width:1320px;margin:0 auto;padding:20px"><p>&#169; 2025 VOGUE USA. All Rights Reserved.</p><div><a href="privacy-policy.html" style="margin:0 8px">Privacy Policy</a><a href="terms.html" style="margin:0 8px">Terms</a><a href="contact.html" style="margin:0 8px">Contact</a></div></div></footer>
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar"><div class="cart-header"><div><div class="cart-title">Cart</div><div class="cart-count-text" id="cartCountText">0 items</div></div><button class="cart-close" onclick="closeCart()">&#x2715;</button></div><div class="cart-items" id="cartItems"></div><div class="cart-footer" id="cartFooter" style="display:none"><div class="cart-summary-row total"><span>Total</span><span id="cartTotal">$0.00</span></div><a href="checkout.html" class="btn-checkout">Checkout</a></div></div>
+<div class="toast" id="toast"></div>
+<script src="../js/main.js"></script><script>document.getElementById('cartOverlay')?.addEventListener('click', closeCart);</script>
+</body></html>

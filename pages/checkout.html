@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | VOGUE USA</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+<div class="announcement-bar">
+  🔒 Secure SSL Checkout &nbsp;|&nbsp; 🇺🇸 Ships from USA &nbsp;|&nbsp; 30-Day Easy Returns
+</div>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="logo">
+      <a href="../index.html">
+        <div class="logo-mark"><span>V</span></div>
+        <div class="logo-text">
+          <span class="logo-name">VOGUE USA</span>
+          <span class="logo-tagline">Secure Checkout</span>
+        </div>
+      </a>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-light)">
+      🔒 SSL Encrypted &nbsp;·&nbsp; Your data is safe
+    </div>
+    <div class="header-actions">
+      <button class="cart-btn" onclick="openCart()">🛒<span class="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="../index.html">Home</a>
+    <span class="sep">›</span>
+    <a href="cart.html">Cart</a>
+    <span class="sep">›</span>
+    <span class="current">Checkout</span>
+  </div>
+</div>
+
+<main class="checkout-page">
+  <div class="container">
+    <h1 class="checkout-page-title">Checkout</h1>
+
+    <div class="checkout-layout">
+
+      <!-- Forms Column -->
+      <form id="checkoutForm" onsubmit="placeOrder(); return false;">
+
+        <!-- Shipping Info -->
+        <div class="checkout-section">
+          <h2 class="checkout-section-title">
+            <span class="step-num">1</span>
+            Shipping Information
+          </h2>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="John" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Smith" required>
+            </div>
+          </div>
+
+          <div class="form-grid full" style="margin-top:16px">
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" placeholder="john.smith@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-grid" style="margin-top:16px">
+            <div class="form-group">
+              <label>Phone Number *</label>
+              <input type="tel" placeholder="(555) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label>Company (optional)</label>
+              <input type="text" placeholder="Company name">
+            </div>
+          </div>
+
+          <div class="form-grid full" style="margin-top:16px">
+            <div class="form-group">
+              <label>Street Address *</label>
+              <input type="text" placeholder="123 Main Street, Apt 4B" required>
+            </div>
+          </div>
+
+          <div class="form-row-3" style="margin-top:16px">
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" placeholder="New York" required>
+            </div>
+            <div class="form-group">
+              <label>State *</label>
+              <select required>
+                <option value="">Select State</option>
+                <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                <option>Arkansas</option><option>California</option><option>Colorado</option>
+                <option>Connecticut</option><option>Delaware</option><option>Florida</option>
+                <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+                <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+                <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+                <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+                <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+                <option>New Mexico</option><option selected>New York</option><option>North Carolina</option>
+                <option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option>
+                <option>South Carolina</option><option>South Dakota</option><option>Tennessee</option>
+                <option>Texas</option><option>Utah</option><option>Vermont</option>
+                <option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                <option>Wisconsin</option><option>Wyoming</option>
+                <option>Washington D.C.</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>ZIP Code *</label>
+              <input type="text" placeholder="10001" maxlength="10" required>
+            </div>
+          </div>
+
+          <div class="form-grid full" style="margin-top:16px">
+            <div class="form-group">
+              <label>Country</label>
+              <select>
+                <option selected>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:16px">
+            <label style="display:flex;align-items:center;gap:10px;font-size:14px;cursor:pointer">
+              <input type="checkbox" style="width:16px;height:16px;accent-color:var(--black)">
+              Ship to a different address (billing address)
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Delivery Method -->
+        <div class="checkout-section">
+          <h2 class="checkout-section-title">
+            <span class="step-num">2</span>
+            Delivery Method
+          </h2>
+
+          <div class="payment-methods">
+            <div class="payment-option selected" data-method="standard">
+              <input type="radio" name="delivery" value="standard" checked>
+              <div>
+                <div class="payment-option-label">Standard Shipping (5–7 Business Days)</div>
+                <div style="font-size:12px;color:var(--text-light)">Free on orders over $75</div>
+              </div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon">FREE*</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="express">
+              <input type="radio" name="delivery" value="express">
+              <div>
+                <div class="payment-option-label">Express Shipping (2–3 Business Days)</div>
+                <div style="font-size:12px;color:var(--text-light)">Faster guaranteed delivery</div>
+              </div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon">$14.99</span>
+              </div>
+            </div>
+            <div class="payment-option" data-method="overnight">
+              <input type="radio" name="delivery" value="overnight">
+              <div>
+                <div class="payment-option-label">Overnight (Next Business Day)</div>
+                <div style="font-size:12px;color:var(--text-light)">Order by 2PM EST for next-day delivery</div>
+              </div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon">$29.99</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="checkout-section">
+          <h2 class="checkout-section-title">
+            <span class="step-num">3</span>
+            Payment Method
+          </h2>
+
+          <div class="payment-methods">
+            <div class="payment-option selected" data-method="card" onclick="toggleCardFields()">
+              <input type="radio" name="payment" value="card" checked>
+              <div class="payment-option-label">Credit / Debit Card</div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon">VISA</span>
+                <span class="payment-card-icon">MC</span>
+                <span class="payment-card-icon">AMEX</span>
+              </div>
+            </div>
+
+            <!-- Card Fields -->
+            <div class="card-fields show" id="cardFields">
+              <div class="form-grid full">
+                <div class="form-group">
+                  <label>Cardholder Name</label>
+                  <input type="text" placeholder="John Smith">
+                </div>
+              </div>
+              <div class="form-grid full" style="margin-top:12px">
+                <div class="form-group">
+                  <label>Card Number</label>
+                  <input type="text" placeholder="•••• •••• •••• ••••" maxlength="19">
+                </div>
+              </div>
+              <div class="form-row-3" style="margin-top:12px">
+                <div class="form-group">
+                  <label>Expiry Month</label>
+                  <select>
+                    <option>01</option><option>02</option><option>03</option><option>04</option>
+                    <option>05</option><option>06</option><option>07</option><option>08</option>
+                    <option>09</option><option>10</option><option>11</option><option>12</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>Expiry Year</label>
+                  <select>
+                    <option>2025</option><option>2026</option><option>2027</option>
+                    <option>2028</option><option>2029</option><option>2030</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>CVV</label>
+                  <input type="text" placeholder="•••" maxlength="4">
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-option" data-method="paypal">
+              <input type="radio" name="payment" value="paypal">
+              <div class="payment-option-label">PayPal</div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon" style="color:#003087;background:#e8f0fe">PayPal</span>
+              </div>
+            </div>
+
+            <div class="payment-option" data-method="applepay">
+              <input type="radio" name="payment" value="applepay">
+              <div class="payment-option-label">Apple Pay</div>
+              <div class="payment-option-icons">
+                <span class="payment-card-icon">🍎 Pay</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- reCAPTCHA Placeholder -->
+          <div class="recaptcha-placeholder">
+            <div class="check-box"></div>
+            <span>I'm not a robot</span>
+            <div class="recaptcha-logo">
+              <div class="g">G</div>
+              <div style="font-size:8px;color:var(--gray)">reCAPTCHA</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Order Notes -->
+        <div class="checkout-section">
+          <h2 class="checkout-section-title" style="font-size:16px">
+            Order Notes (Optional)
+          </h2>
+          <div class="form-group">
+            <textarea placeholder="Special instructions for your order, gift messages, etc."></textarea>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-place-order" id="placeOrderBtn">
+          🔒 Place Order Securely
+        </button>
+
+        <p style="text-align:center;font-size:12px;color:var(--gray);margin-top:12px">
+          By placing your order you agree to our <a href="terms.html" style="color:var(--accent)">Terms & Conditions</a>
+          and <a href="privacy-policy.html" style="color:var(--accent)">Privacy Policy</a>.
+        </p>
+
+      </form>
+
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+        <h3>Order Summary</h3>
+
+        <div id="checkoutItems">
+          <!-- Rendered by JS -->
+        </div>
+        <div id="checkoutEmpty" style="display:none;text-align:center;padding:30px;color:var(--gray)">
+          <p>No items in cart. <a href="../index.html" style="color:var(--accent)">Shop Now</a></p>
+        </div>
+
+        <div class="summary-row"><span>Subtotal</span><span id="coSubtotal">$0.00</span></div>
+        <div class="summary-row"><span>Shipping</span><span id="coShipping">—</span></div>
+        <div class="summary-row"><span>Tax (8%)</span><span id="coTax">$0.00</span></div>
+        <div class="summary-row total"><span>Total</span><span id="coTotal">$0.00</span></div>
+
+        <div style="margin-top:20px;padding:16px;background:rgba(200,16,46,0.06);border-radius:var(--radius);border:1px solid rgba(200,16,46,0.15);font-size:13px;color:var(--accent)">
+          🎉 You're eligible for FREE shipping!
+        </div>
+
+        <div style="margin-top:20px;display:flex;flex-direction:column;gap:8px;font-size:12px;color:var(--text-light)">
+          <div style="display:flex;align-items:center;gap:8px">🔒 256-bit SSL Encryption</div>
+          <div style="display:flex;align-items:center;gap:8px">🚚 Ships within 1–2 business days</div>
+          <div style="display:flex;align-items:center;gap:8px">↩️ Free 30-day returns</div>
+          <div style="display:flex;align-items:center;gap:8px">📞 Support: 1-800-VOGUE-USA</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<!-- Cart Sidebar -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <div><div class="cart-title">Your Cart</div><div class="cart-count-text" id="cartCountText">0 items</div></div>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-summary-row"><span>Subtotal</span><span id="cartSubtotal">$0.00</span></div>
+    <div class="cart-summary-row"><span>Shipping</span><span id="cartShipping">$9.99</span></div>
+    <div class="cart-summary-row total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+    <a href="checkout.html" class="btn-checkout">🔒 Checkout</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../js/main.js"></script>
+<script src="../js/checkout.js"></script>
+<script>
+document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
+
+function toggleCardFields() {
+  const card = document.getElementById('cardFields');
+  const selected = document.querySelector('.payment-option[data-method="card"]');
+  if (selected?.classList.contains('selected')) {
+    card?.classList.add('show');
+  } else {
+    card?.classList.remove('show');
+  }
+}
+
+document.querySelectorAll('.payment-option').forEach(opt => {
+  opt.addEventListener('click', function() {
+    document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('selected'));
+    this.classList.add('selected');
+    const cardFields = document.getElementById('cardFields');
+    if (this.dataset.method === 'card') {
+      cardFields?.classList.add('show');
+    } else {
+      cardFields?.classList.remove('show');
+    }
+  });
+});
+</script>
+</body>
+</html>
